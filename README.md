@@ -1,6 +1,6 @@
-# Full-Stack JWT Secured API (.NET 8) + Web UI (React)
+# Full-Stack JWT Secured API (.NET 7) + Web UI (React)
 
-This project is a complete full-stack application featuring a secure .NET 8 Web API backend and a modern React frontend.
+This project is a complete full-stack application featuring a secure .NET 7 Web API backend and a modern React frontend.
 
 The backend includes JWT authentication, role-based authorization, EF Core for data access, and a paginated CRUD API for products.
 
@@ -8,10 +8,10 @@ The frontend is a responsive React application built with Vite and styled with T
 
 ## How to Run the API (Backend)
 
-The backend is a .NET 8 Web API project.
+The backend is a .NET 7 Web API project.
 
 ### Prerequisites
-- .NET 8 SDK
+- .NET 7 SDK
 - SQL Server instance (the connection string in `appsettings.Development.json` points to a local server, but can be changed).
 
 ### 1. Apply Database Migrations
