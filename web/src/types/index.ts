@@ -1,24 +1,31 @@
 // Auth Types
-export interface LoginRequest {
+interface ILoginRequest {
   username: string;
   password?: string;
 }
 
-export interface LoginResponse {
+interface ILoginResponse {
   token: string;
 }
 
 // Product Types
-export interface Product {
+interface IProduct {
   id: number;
   name: string;
   price: number;
   createdAt: string;
 }
 
-export interface PaginatedResponse<T> {
+interface IPaginatedResponse<T> {
   items: T[];
   totalCount: number;
   pageNumber: number;
   pageSize: number;
 }
+
+export type {
+    ILoginRequest as LoginRequest,
+    ILoginResponse as LoginResponse,
+    IProduct as Product,
+    IPaginatedResponse as PaginatedResponse
+};
