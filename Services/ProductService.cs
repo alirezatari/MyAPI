@@ -1,6 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using MyApi.Data;
 using MyApi.Models;
+using MyApi.Models.DTOs;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace MyApi.Services
 {
@@ -9,8 +12,20 @@ namespace MyApi.Services
         private readonly AppDbContext _context;
         public ProductService(AppDbContext context) => _context = context;
 
-        public async Task<List<Product>> GetAllAsync() =>
-            await _context.Products.ToListAsync();
+        public async Task<PaginatedResponse<Product>> GetAllAsync(int pageNumber, int pageSize)
+        {
+            var query = _context.Products.AsQueryable();
+            var totalCount = await query.CountAsync();
+            var items = await query.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToListAsync();
+
+            return new PaginatedResponse<Product>
+            {
+                Items = items,
+                TotalCount = totalCount,
+                PageNumber = pageNumber,
+                PageSize = pageSize
+            };
+        }
 
         public async Task<Product?> GetByIdAsync(int id) =>
             await _context.Products.FindAsync(id);

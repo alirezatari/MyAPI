@@ -1,0 +1,40 @@
+# Dependencies
+/packages/
+/node_modules/
+
+# Build artifacts
+/[Bb]in/
+/[Oo]bj/
+
+# Local User Settings
+*.DotSettings.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio / Rider
+.vs/
+.idea/
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+Build/
+buildProject/
+Build_artefacts/
+publish/
+
+# Dotnet Tooling
+.store/
+
+# Misc
+*.DS_Store
+*.swp
+*.log
+*.lock.json
+/temp_dotnet_project/
+web/node_modules/
