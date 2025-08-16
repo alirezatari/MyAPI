@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { productService } from '../services/productService';
-import { Product } from '../types';
+import { type Product } from '../types';
 import toast from 'react-hot-toast';
 import Modal from '../components/Modal';
 import ProductForm from '../components/ProductForm';
